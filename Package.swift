@@ -6,11 +6,11 @@ import PackageDescription
 let package = Package(
     name: "XcodeCoverageConverter",
     platforms: [
-        .macOS(.v10_12),
+        .macOS(.v10_13),
     ],
     products: [
         .executable(name: "xcc", targets: ["XcodeCoverageConverter"]),
-        .library(name: "XcodeCoverage", targets: ["Core"])
+        .library(name: "XcodeCoverage", targets: ["XcodeCoverage"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -28,6 +28,10 @@ let package = Package(
                 "ResourcesEmbedded",
             ],
             path: "Sources/XcodeCoverageConverter"),
+        .target(
+            name: "XcodeCoverage",
+            dependencies: ["Core"]
+        ),
         .target(
             name: "Core",
             dependencies: [
