@@ -2,16 +2,6 @@ import ArgumentParser
 import Core
 import Foundation
 
-struct Xcc: ParsableCommand {
-    static let configuration = CommandConfiguration(
-        abstract: "A Swift command-line tool to convert xccov outputs into continuous integration friendly formats",
-        version: "0.2.2",
-        subcommands: [Generate.self],
-        defaultSubcommand: Generate.self)
-
-    init() { }
-}
-
 struct Generate: ParsableCommand {
     static let configuration = CommandConfiguration(abstract: "Generates a converted file from xccov results")
 
@@ -51,5 +41,3 @@ struct Generate: ParsableCommand {
         }
     }
 }
-
-Xcc.main()
