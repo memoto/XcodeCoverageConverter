@@ -30,13 +30,12 @@ let package = Package(
             path: "Sources/XcodeCoverageConverter"),
         .target(
             name: "XcodeCoverage",
-            dependencies: ["Core"]
+            dependencies: ["Core", "ResourcesEmbedded"]
         ),
         .target(
             name: "Core",
             dependencies: [
                 .target(name: "Resources"),
-                .target(name: "ResourcesEmbedded"),
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ],
             path: "Sources/Core"),
