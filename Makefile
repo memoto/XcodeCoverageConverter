@@ -10,6 +10,9 @@ SOURCES = $(wildcard $(srcdir)/**/*.swift)
 
 .DEFAULT_GOAL = all
 
+.EXPORT_ALL_VARIABLES: 
+export EMBED_RESOURCES = 1
+
 .PHONY: all
 all: Xcodecoverageconverter
 

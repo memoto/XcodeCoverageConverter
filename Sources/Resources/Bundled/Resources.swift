@@ -41,3 +41,9 @@ class BundleResource {
         self.size = data.count
     }
 }
+
+public class Resources {
+    public static var coverageDTD: Data {
+        BundleResource.coverageDTD.data
+    }
+}

@@ -6,7 +6,11 @@
 //
 
 import Foundation
+#if EMBED_RESOURCES
 import Resources
+#else
+import ResourcesBundled
+#endif
 
 public extension Xccov.Converters {
     enum CoberturaXml {}
